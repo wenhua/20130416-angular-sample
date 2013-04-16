@@ -1,5 +1,7 @@
-MyCtrl = ($scope) ->
-  $scope.data =
-    msg: "hello"
-  console.log 123
-  yes
+myApp = angular.module 'myApp', []
+
+myApp.factory 'Data', () ->
+  {msg: "data from service"}
+
+@MyCtrl = ($scope, Data) ->
+  $scope.data = Data
